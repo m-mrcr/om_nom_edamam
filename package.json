@@ -1,0 +1,29 @@
+{
+  "name": "om-nom-edamam",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "jest --coverage --runInBand --forceExit",
+    "heroku-postbuild": "npm install --production"
+  },
+  "engines": {
+    "node": "10.16.2",
+    "npm": "6.9.0"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "pg": "^7.12.1",
+    "sequelize": "^5.16.0",
+    "sequelize-cli": "^5.5.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "shelljs": "^0.8.3",
+    "supertest": "^4.0.2"
+  }
+}

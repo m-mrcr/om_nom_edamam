@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "",
+    "password": null,
+    "database": "om_nom_edamam_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "",
+    "password": null,
+    "database": "om_nom_edamam_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "",
+    "password": null,
+    "database": "om_nom_edamam_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}
