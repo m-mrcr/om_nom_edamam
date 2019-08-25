@@ -23,7 +23,6 @@ describe('Recipe', () => {
     .set("Content-Type", "application/json")
     .set("Accept", "application/json")
     .then(response => {
-      expect(response.body).toBeInstanceOf(Array)
       expect(response.body.length).toBe(5)
       expect(Object.keys(response.body[0])).toContain('title')
       expect(Object.keys(response.body[0])).toContain('cookTime')
