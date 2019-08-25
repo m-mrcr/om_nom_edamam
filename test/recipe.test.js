@@ -23,8 +23,8 @@ describe('Recipe', () => {
     .set("Content-Type", "application/json")
     .set("Accept", "application/json")
     .then(response => {
-      console.log(response.body)
+      console.log(response.body.length);
+      console.log(response.body);
     })
-    console.log('hello');
   });
 });
