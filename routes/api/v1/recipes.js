@@ -6,8 +6,7 @@ var sequelize = new Sequelize('om_nom_edamam_development', "", null, {host: 'loc
 
 router.get('/food_search', function(req,res) {
   var foodType = req.query.q;
-  console.log(foodType);
-sequelize.query('SELECT * FROM "Recipes" WHERE "title" ILIKE ?', {raw: true, replacements: [`%${foodType}%`]})
+  sequelize.query('SELECT * FROM "Recipes" WHERE "title" ILIKE ?', {raw: true, replacements: [`%${foodType}%`]})
   .then(recipes => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).send(JSON.stringify(recipes[0]));

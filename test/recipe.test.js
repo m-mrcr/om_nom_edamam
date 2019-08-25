@@ -23,8 +23,16 @@ describe('Recipe', () => {
     .set("Content-Type", "application/json")
     .set("Accept", "application/json")
     .then(response => {
-      console.log(response.body.length);
-      console.log(response.body);
+      expect(response.body).toBeInstanceOf(Array)
+      expect(response.body.length).toBe(5)
+      expect(Object.keys(response.body[0])).toContain('title')
+      expect(Object.keys(response.body[0])).toContain('cookTime')
+      expect(Object.keys(response.body[0])).toContain('caloriesPerServing')
+      expect(Object.keys(response.body[0])).toContain('servingAmount')
+      expect(Object.keys(response.body[0])).toContain('image')
+      expect(Object.keys(response.body[0])).toContain('url')
+      expect(Object.keys(response.body[0])).toContain('healthDetails')
+      expect(Object.keys(response.body[0])).toContain('ingredients')
     })
   });
 });
