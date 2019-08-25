@@ -2,7 +2,7 @@
   "development": {
     "username": "",
     "password": null,
-    "database": "om_nom_edamam_database_development",
+    "database": "om_nom_edamam_development",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
@@ -10,7 +10,7 @@
   "test": {
     "username": "",
     "password": null,
-    "database": "on_nom_edamam_database_test",
+    "database": "on_nom_edamam_test",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
