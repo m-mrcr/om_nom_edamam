@@ -16,6 +16,7 @@ router.get('/food_search', function(req,res) {
       .then(json => {
         console.log(json)
         var edamamData = json.hits;
+<<<<<<< HEAD
         edamamData.forEach(function(element) {
           var servingCalories = element.recipe.calories / element.recipe.yield
           // Recipe.create({
@@ -32,7 +33,26 @@ router.get('/food_search', function(req,res) {
       })
       .then(updatedData => {
         return sequelize.query('SELECT * FROM "Recipes" WHERE "title" ILIKE ?', {raw: true, replacements: [`%${foodType}%`]})
+=======
+        console.log(edamamData);
+        // edamamData.forEach(function(element) {
+        //   var servingCalories = element.recipe.calories / element.recipe.yield
+        //   Recipe.create({
+        //     title: element.recipe.title,
+        //     cookTime: element.recipe.cookTime,
+        //     caloriesPerServing: parseInt(servingCalories),
+        //     servingAmount: element.recipe.yield,
+        //     image: element.recipe.image,
+        //     url: element.recipe.url,
+        //     healthDetails: JSON.stringify(element.recipe.healthLabels),
+        //     ingredients: JSON.stringify(element.recipe.ingredientLines)
+        //   })
+        // })
+>>>>>>> cc4934645312df066ae847c12fef5892b8bbe080
       })
+      // .then(updatedData => {
+      //   return sequelize.query('SELECT * FROM "Recipes" WHERE "title" ILIKE ?', {raw: true, replacements: [`%${foodType}%`]})
+      // })
       .then(returnData => {
         return console.log(returnData);
         // res.setHeader("Content-Type", "application/json");
