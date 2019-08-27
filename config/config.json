@@ -4,24 +4,18 @@
     "password": null,
     "database": "om_nom_edamam_development",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "operatorsAliases": false
   },
   "test": {
     "username": "",
     "password": null,
     "database": "on_nom_edamam_test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "operatorsAliases": false
   },
   "production": {
-<<<<<<< HEAD
-    "username": "",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-=======
     "use_env_variable": "DATABASE_URL"
->>>>>>> 5c7333c8999ec2e6265d3f31a3914e84c08d6662
   }
 }
