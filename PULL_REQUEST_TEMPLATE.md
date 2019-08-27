@@ -8,12 +8,12 @@
 - [ ] Reviewing
 
 ## Implements/Fixes:
-> 
+>  
 
 ## Description of Changes:
->
+>  
 
-##Issues Closed:
+## Issues Closed:
 closes #
 
 ## Overall-Review:
