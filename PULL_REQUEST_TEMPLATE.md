@@ -3,33 +3,29 @@
 - [ ] Bug Fix
 
 ## Completed
-- [ ] Wrote Tests
-- [ ] Implemented
-- [ ] Reviewed
-
-## Review:
-- [ ] All Tests are Passing
-- [ ] The code will run locally
+- [ ] Testing
+- [ ] Implementation
+- [ ] Reviewing
 
 ## Implements/Fixes:
 >
 
 ## Description of Changes:
->
+> 
 
 ##Issues Closed:
 closes #
 
-## Testing Changes
-- [ ] No Tests have been changed
-- [ ] Some Tests have been changed
-- [ ] All of the Tests have been changed (Please describe happened)
+## Overall-Review:
+- [ ] All Tests Passing
+- [ ] Code Runs Locally
+- [ ] No Unused/Commented-Out Code
+- [ ] Clarified code through comments, particularly in hard-to-understand areas
 
-## Checklist:
-- [ ] My code has no unused/commented out code
-- [ ] I have reviewed my code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have fully tested my code
+## Testing Changes
+- [ ] No Tests Have Changed
+- [ ] Some Tests Have Changed
+- [ ] All Tests Have Changed (Please Explain)
 
 ## Test Coverage:
 - Overall coverage:
