@@ -14,10 +14,14 @@
     "dialect": "postgres"
   },
   "production": {
+<<<<<<< HEAD
     "username": "",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
+=======
+    "use_env_variable": "DATABASE_URL"
+>>>>>>> 5c7333c8999ec2e6265d3f31a3914e84c08d6662
   }
 }
