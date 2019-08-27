@@ -1,39 +1,40 @@
-- [] Wrote Tests
-- [] Implemented
-- [] Reviewed
+- [ ] Wrote Tests
+- [ ] Implemented
+- [ ] Reviewed
 
 # Necessary checkmarks:
-- [] All Tests are Passing
-- [] The code will run locally
+- [ ] All Tests are Passing
+- [ ] The code will run locally
 
 ## Type of change
-- [] New feature
-- [] Bug Fix
+- [ ] New feature
+- [ ] Bug Fix
 
 # Implements/Fixes:
+>
+
 ## Description of Changes:
+>
 
 closes #
 
 # Check the correct boxes
-- [] This broke nothing
-- [] This broke some stuff
-- [] This broke everything
+- [ ] This broke nothing
+- [ ] This broke some stuff
+- [ ] This broke everything
 
 # Testing Changes
-- [] No Tests have been changed
-- [] Some Tests have been changed
-- [] All of the Tests have been changed (Please describe happened)
+- [ ] No Tests have been changed
+- [ ] Some Tests have been changed
+- [ ] All of the Tests have been changed (Please describe happened)
 
 # Checklist:
 
-- [] My code has no unused/commented out code
-- [] I have reviewed my code
-- [] I have commented my code, particularly in hard-to-understand areas
-- [] I have fully tested my code
+- [ ] My code has no unused/commented out code
+- [ ] I have reviewed my code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have fully tested my code
 
 # Test Coverage:
 
 - Overall coverage:
-- Model coverage:
-- Linter coverage:
