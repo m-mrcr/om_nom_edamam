@@ -54,4 +54,26 @@ router.get('/food_search', function(req,res) {
   });
 });
 
+router.get('/calorie_search', function(req,res) {
+  var calorieMin = req.query.q.split('-')[0];
+  var calorieMax = req.query.q.split('-')[1];
+  sequelize.query(
+    'SELECT * FROM "Recipes" WHERE "caloriesPerServing" BETWEEN :calorieMin AND :calorieMax',
+     {raw: true,
+       replacements: {
+         calorieMin: `${calorieMin}`,
+         calorieMax: `${calorieMax}`
+       }
+     })
+  .then(recipes => {
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).send(JSON.stringify(recipes[0]));
+    })
+  .catch(error => {
+    console.log(error)
+    res.setHeader("Content-Type", "application/json");
+    res.status(500).send({error});
+  });
+});
+
 module.exports = router;
