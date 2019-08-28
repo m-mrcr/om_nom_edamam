@@ -134,13 +134,16 @@ describe('Recipe', () => {
     })
   });
 
+  // THIS TEST IS COMMENTED BECAUSE IT SI NOT PASSING ON TRAVIS
+  // IT IS HOWEVER PASSING IN ALL OTHER ARENAS
+
   // it('GET recipes for a food type sorted by preparation time - NOT IN DB', () => {
   //   return request(app)
   //   .get('/api/v1/recipes/time_sort?q=pear')
   //   .set("Content-Type", "application/json")
   //   .set("Accept", "application/json")
   //   .then(response => {
-  //     console.log(response.body[1].cookTime)
+  //     (response.body[1].cookTime)
   //     expect(response.statusCode).toBe(201)
   //     expect(response.body.length).toBe(10)
   //     expect(response.body[0].cookTime).toBeLessThanOrEqual(response.body[1].cookTime)
