@@ -69,7 +69,7 @@ describe('Recipe', () => {
     .get('/api/v1/recipes/food_search?')
     .set("Content-Type", "application/json")
     .set("Accept", "application/json")
-    .then(response => { console.log(response.body)
+    .then(response => {
       expect(response.statusCode).toBe(500)
     })
   });
@@ -127,7 +127,7 @@ describe('Recipe', () => {
     .get('/api/v1/recipes/time_sort?q=beef')
     .set("Content-Type", "application/json")
     .set("Accept", "application/json")
-    .then(response => { console.log(response.body)
+    .then(response => {
       expect(response.statusCode).toBe(200)
       expect(response.body.length).toBe(5)
       expect(response.body[0].cookTime).toBeLessThanOrEqual(response.body[1].cookTime)
@@ -140,6 +140,7 @@ describe('Recipe', () => {
     .set("Content-Type", "application/json")
     .set("Accept", "application/json")
     .then(response => {
+      console.log(response.body[1].cookTime)
       expect(response.statusCode).toBe(201)
       expect(response.body.length).toBe(10)
       expect(response.body[0].cookTime).toBeLessThanOrEqual(response.body[1].cookTime)
@@ -161,7 +162,7 @@ describe('Recipe', () => {
     .get('/api/v1/recipes/time_sort?')
     .set("Content-Type", "application/json")
     .set("Accept", "application/json")
-    .then(response => { console.log(response.body)
+    .then(response => {
       expect(response.statusCode).toBe(500)
     })
   });
