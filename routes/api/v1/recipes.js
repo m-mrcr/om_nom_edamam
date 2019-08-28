@@ -113,7 +113,7 @@ router.get('/time_sort', function(req,res) {
       ['cookTime', 'ASC']
     ]
   })
-  .then(recipes => { console.log(recipes)
+  .then(recipes => {
     if (recipes[0] == undefined) {
       fetch(`https://api.edamam.com/search?q=${foodType}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`, {compress: true, headers: {"Accept-Encoding": "gzip"}})
       .then(res => res.json())
@@ -135,10 +135,7 @@ router.get('/time_sort', function(req,res) {
           }
           formatData.push(e)
         })
-        return formatData
-      })
-      .then(formattedData => {
-        Recipe.bulkCreate(formattedData)
+        return Recipe.bulkCreate(formatData)
       })
       .then(created => {
         return Recipe.findAll({
