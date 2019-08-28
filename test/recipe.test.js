@@ -54,7 +54,7 @@ describe('Recipe', () => {
     })
   });
 
-  fit('GET recipes for a food type - SADPATH', () => {
+  it('GET recipes for a food type - SADPATH', () => {
     return request(app)
     .get('/api/v1/recipes/food_search?q=[]')
     .set("Content-Type", "application/json")
