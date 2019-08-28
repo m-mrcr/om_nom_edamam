@@ -55,7 +55,7 @@ router.get('/food_search', function(req,res) {
     res.setHeader("Content-Type", "application/json");
     res.status(200).send(JSON.stringify(recipes));
     }})
-  .catch(error => { console.log(error)
+  .catch(error => {
     res.setHeader("Content-Type", "application/json");
     res.status(500).send({error});
   });
@@ -68,6 +68,25 @@ router.get('/calorie_search', function(req,res) {
     where: {
       caloriesPerServing: {
         [Op.between]: [calorieMin, calorieMax]
+      }
+    }
+  })
+  .then(recipes => {
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).send(JSON.stringify(recipes));
+    })
+  .catch(error => {
+    res.setHeader("Content-Type", "application/json");
+    res.status(500).send({error});
+  });
+});
+
+router.get('/health_search', function(req,res) {
+  var healthConcern = req.query.q;
+  Recipe.findAll({
+    where: {
+      healthDetails: {
+        [Op.iLike]: `%${healthConcern}%`
       }
     }
   })
