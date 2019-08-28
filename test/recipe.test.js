@@ -122,5 +122,24 @@ describe('Recipe', () => {
     })
   });
 
+  it('GET recipes for a food type sorted by preparation time', () => {
+    return request(app)
+    .get('/api/v1/recipes/time_sort?q=beef')
+    .set("Content-Type", "application/json")
+    .set("Accept", "application/json")
+    .then(response => {
+      expect(response.statusCode).toBe(200)
+      // expect(response.body.length).toBe(14)
+      expect(Object.keys(response.body[0])).toContain('title')
+      expect(Object.keys(response.body[0])).toContain('cookTime')
+      expect(Object.keys(response.body[0])).toContain('caloriesPerServing')
+      expect(Object.keys(response.body[0])).toContain('servingAmount')
+      expect(Object.keys(response.body[0])).toContain('image')
+      expect(Object.keys(response.body[0])).toContain('url')
+      expect(Object.keys(response.body[0])).toContain('healthDetails')
+      expect(Object.keys(response.body[0])).toContain('ingredients')
+    })
+  });
+
 
 });
