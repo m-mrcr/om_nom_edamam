@@ -35,6 +35,16 @@ describe('Recipe', () => {
     })
   });
 
+  fit('GET recipes for a food type - SADPATH', () => {
+    return request(app)
+    .get('/api/v1/recipes/food_search?q=')
+    .set("Content-Type", "application/json")
+    .set("Accept", "application/json")
+    .then(response => {
+      expect(response.statusCode).toBe(500)
+    })
+  });
+
   it('GET recipes for range of calories', () => {
     return request(app)
     .get('/api/v1/recipes/calorie_search?q=150-300')
@@ -53,7 +63,7 @@ describe('Recipe', () => {
     })
   });
 
-  it('GET recipes for range of calories - sadpath', () => {
+  it('GET recipes for range of calories - SADPATH', () => {
     return request(app)
     .get('/api/v1/recipes/calorie_search?q=150')
     .set("Content-Type", "application/json")
