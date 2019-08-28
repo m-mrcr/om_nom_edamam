@@ -2,13 +2,14 @@ var express = require('express');
 var router = express.Router();
 var Recipe = require('../../../models').Recipe;
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('om_nom_edamam_development', "", null, {host: 'localhost', dialect: 'postgres'});
 var fetch = require('node-fetch');
 require('dotenv').config();
+const Op = Sequelize.Op
 
 router.get('/food_search', function(req,res) {
   var foodType = req.query.q;
-  sequelize.query('SELECT * FROM "Recipes" WHERE "title" ILIKE ?', {raw: true, replacements: [`%${foodType}%`]})
+  var capitalizedFoodType = foodType.charAt(0).toUpperCase() + foodType.slice(1);
+  Recipe.findAll({where: {title: {[Op.substring]: `${capitalizedFoodType}`}}})
   .then(recipes => {
     if (recipes[1].rowCount == 0) {
       fetch(`https://api.edamam.com/search?q=${foodType}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`, {compress: true, headers: {"Accept-Encoding": "gzip"}})
@@ -46,7 +47,7 @@ router.get('/food_search', function(req,res) {
       });
     } else {
     res.setHeader("Content-Type", "application/json");
-    res.status(200).send(JSON.stringify(recipes[0]));
+    res.status(200).send(JSON.stringify(recipes));
     }})
   .catch(error => {
     res.setHeader("Content-Type", "application/json");
