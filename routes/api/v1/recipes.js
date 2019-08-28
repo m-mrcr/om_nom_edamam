@@ -47,7 +47,7 @@ router.get('/food_search', function(req,res) {
       });
     } else {
     res.setHeader("Content-Type", "application/json");
-    res.status(200).send(JSON.stringify(recipes[0]));
+    res.status(200).send(JSON.stringify(recipes));
     }})
   .catch(error => {
     res.setHeader("Content-Type", "application/json");

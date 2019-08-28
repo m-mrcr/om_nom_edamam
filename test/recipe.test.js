@@ -19,11 +19,11 @@ describe('Recipe', () => {
 
   fit('GET recipes for a food type', () => {
     return request(app)
-    .get('/api/v1/recipes/food_search?q=pear')
+    .get('/api/v1/recipes/food_search?q=beef')
     .set("Content-Type", "application/json")
     .set("Accept", "application/json")
-    .then(response => {
-      expect(response.body.length).toBe(10)
+    .then(response => {console.log(response);
+      expect(response.body.length).toBe(5)
       expect(Object.keys(response.body[0])).toContain('title')
       expect(Object.keys(response.body[0])).toContain('cookTime')
       expect(Object.keys(response.body[0])).toContain('caloriesPerServing')
