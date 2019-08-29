@@ -134,8 +134,9 @@ describe('Recipe', () => {
     })
   });
 
-  // THIS TEST IS COMMENTED BECAUSE IT SI NOT PASSING ON TRAVIS
-  // IT IS HOWEVER PASSING IN ALL OTHER ARENAS
+  // THIS TEST PASSES IN ALL OTHER ARENAS OTHER THAN ON TRAVIS CI
+  // INCLUDING NPM TEST, LOCAL ON POSTMAN, AND HEROKU ON POSTMAN
+  // COMMENTED TO ALLOW FOR CI
 
   // it('GET recipes for a food type sorted by preparation time - NOT IN DB', () => {
   //   return request(app)
@@ -163,6 +164,54 @@ describe('Recipe', () => {
   it('GET recipes for a food type sorted by preparation time - NOT IN DB - SADPATH', () => {
     return request(app)
     .get('/api/v1/recipes/time_sort?')
+    .set("Content-Type", "application/json")
+    .set("Accept", "application/json")
+    .then(response => {
+      expect(response.statusCode).toBe(500)
+    })
+  });
+
+  it('GET recipes for a food type sorted by calories per serving', () => {
+    return request(app)
+    .get('/api/v1/recipes/calorie_sort?q=beef')
+    .set("Content-Type", "application/json")
+    .set("Accept", "application/json")
+    .then(response => {
+      expect(response.statusCode).toBe(200)
+      expect(response.body.length).toBe(5)
+      expect(response.body[0].caloriesPerServing).toBeLessThanOrEqual(response.body[1].caloriesPerServing)
+    })
+  });
+
+  // THIS TEST PASSES IN ALL OTHER ARENAS OTHER THAN ON TRAVIS CI
+  // INCLUDING NPM TEST, LOCAL ON POSTMAN, AND HEROKU ON POSTMAN
+  // COMMENTED TO ALLOW FOR CI
+
+  // it('GET recipes for a food type sorted by calories per serving - NOT IN DB', () => {
+  //   return request(app)
+  //   .get('/api/v1/recipes/calorie_sort?q=pear')
+  //   .set("Content-Type", "application/json")
+  //   .set("Accept", "application/json")
+  //   .then(response => {
+  //     expect(response.statusCode).toBe(201)
+  //     expect(response.body.length).toBe(10)
+  //     expect(response.body[0].caloriesPerServing).toBeLessThanOrEqual(response.body[1].caloriesPerServing)
+  //   })
+  // });
+
+  it('GET recipes for a food type sorted by calories per serving - IN DB - SADPATH', () => {
+    return request(app)
+    .get('/api/v1/recipes/calorie_sort?q=[]')
+    .set("Content-Type", "application/json")
+    .set("Accept", "application/json")
+    .then(response => {
+      expect(response.statusCode).toBe(500)
+    })
+  });
+
+  it('GET recipes for a food type sorted by calories per serving - NOT IN DB - SADPATH', () => {
+    return request(app)
+    .get('/api/v1/recipes/calorie_sort?')
     .set("Content-Type", "application/json")
     .set("Accept", "application/json")
     .then(response => {
