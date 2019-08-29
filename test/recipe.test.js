@@ -134,8 +134,8 @@ describe('Recipe', () => {
     })
   });
 
-  // THIS TEST IS COMMENTED BECAUSE IT SI NOT PASSING ON TRAVIS
-  // IT IS HOWEVER PASSING IN ALL OTHER ARENAS
+  // THIS TEST PASSES IN ALL OTHER ARENAS OTHER THAN ON TRAVIS CI
+  // INCLUDING NPM TEST, LOCAL ON POSTMAN, AND HEROKU ON POSTMAN
 
   it('GET recipes for a food type sorted by preparation time - NOT IN DB', () => {
     return request(app)
@@ -182,8 +182,8 @@ describe('Recipe', () => {
     })
   });
 
-  // THIS TEST IS COMMENTED BECAUSE IT SI NOT PASSING ON TRAVIS
-  // IT IS HOWEVER PASSING IN ALL OTHER ARENAS
+  // THIS TEST PASSES IN ALL OTHER ARENAS OTHER THAN ON TRAVIS CI
+  // INCLUDING NPM TEST, LOCAL ON POSTMAN, AND HEROKU ON POSTMAN
 
   it('GET recipes for a food type sorted by calories per serving - NOT IN DB', () => {
     return request(app)
