@@ -277,7 +277,7 @@ Link: <https://om-nom-edamam.herokuapp.com/api/v1/calorie_sort?q=chicken>
 
 The database uses PostgreSQL. The "Recipes" table stands alone in this database and is shown below.
 
-![db_schema](/db_schema.png)
+![db_schema](db_schema.png)
 
 ## Tech Stack
 
