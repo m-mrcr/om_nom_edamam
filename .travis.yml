@@ -5,3 +5,17 @@ services:
 - postgresql
 before_script:
 - psql -c 'create database om_nom_edamam_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: y0/yQnEIdevtNkaNsTJ9ac3twrsefFeRON3cePr3ew18fLOkyQXbMrNbzUjaMsmXcBrHCvnKYuRxCG
+      ppRz6L4w/KnqamGGK4ZU9rhkVjEcj8m3BGg3kJpsbpQSp5dJZM95YcFhzwPIDsAdH5lv4QGkJ885NHRAFSviIoy9P
+      nb5lGzmQcduur0djlXPHzaeAHiFufpn9w73ImMgVY8NqvwaaY2dTvsklKrc9F4bHq9OVtmCl75TIt7DCDcjIKL8kP
+      gsThILvi8XdR4ebnBjCR4nFu4vb5O5a38Tw+aTv0OgC/wXS7d6vBPAah2dzgTmU4o8Z/wMVQdYp1WzsJ81VLVmIrk
+      /i9zcggdaQ/kCDQie3loORZCKHekPY5vJf/U4fs+0IQf4ZD6unDvqjK6bKDytDEOl/g1bafcEZ76ofQGj4I557x6J
+      6rOCpqOPY1zjX/TUFC+dJ3eugPnjzYdRlLt77v37aTis/LSmZI2g9hKI27e8l94pavjK7U0nHeiWa/RUIkX10kpw9
+      8cvugWFl99Hk6BF82Bbd/oTYQ+2H7SOxMrInwHyVuFu7PDhVMwz840CPv68W1JsNNEpIzY69LeeYhFAwOe5v+M+EM
+      oPUp1cf9w3xwgVBljEJpTNvWoBWUEjHgDhLs8CFYNLKrYDPH3OhujC8cXVtkozhiLMprpRA=
+  app: om-nom-edamam
+  on:
+    repo: m-mrcr/om_nom_edamam
