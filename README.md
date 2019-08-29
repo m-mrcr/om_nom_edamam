@@ -218,6 +218,7 @@ Link: <https://om-nom-edamam.herokuapp.com/api/v1/time_sort?q=chicken>
   ]
 }
 ```
+---
 #### Sort by Calories per Serving
 Get a collection of recipes associated with a food item and sorted by calories per serving.
 ```
@@ -267,7 +268,7 @@ Link: <https://om-nom-edamam.herokuapp.com/api/v1/calorie_sort?q=chicken>
   ]
 }
 ```
-
+---
 ## Database
 
 The database uses PostgreSQL. The "Recipes" table stands alone in this database and is shown below.
