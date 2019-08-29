@@ -21,7 +21,6 @@ Recipes are the singular focus of the Om-Nom-Edamam micro-service. The following
 Get a list of recipes associated with a food item.
 ```
   GET /api/v1/recipes/food_search
-
 ```
 ##### Parameters
 | params | Description |
@@ -72,7 +71,6 @@ Link: <https://om-nom-edamam.herokuapp.com/api/v1/food_search?q=chicken>
 Get a collection of recipes where calories per serving is within a given range.
 ```
   GET /api/v1/recipes/calorie_search
-
 ```
 ##### Parameters
 | params | Description |
@@ -123,7 +121,6 @@ Link: <https://om-nom-edamam.herokuapp.com/api/v1/calorie_search?q=700-800>
 Get a collection of recipes catering to a health concern.
 ```
   GET /api/v1/recipes/health_search
-
 ```
 ##### Parameters
 | params | Description |
@@ -175,7 +172,6 @@ Link: <https://om-nom-edamam.herokuapp.com/api/v1/health_search?q=peanut-free>
 Get a collection of recipes associated with a food item and ordered by cook time.
 ```
   GET /api/v1/recipes/time_sort
-
 ```
 ##### Parameters
 | params | Description |
@@ -226,7 +222,6 @@ Link: <https://om-nom-edamam.herokuapp.com/api/v1/time_sort?q=chicken>
 Get a collection of recipes associated with a food item and sorted by calories per serving.
 ```
   GET /api/v1/recipes/calorie_sort
-
 ```
 ##### Parameters
 | params | Description |
